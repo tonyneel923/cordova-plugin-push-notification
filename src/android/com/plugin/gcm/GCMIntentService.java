@@ -144,7 +144,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     if (isLollipop) {
 
-      return context.getResources().getIdentifier("icon", "drawable", context.getPackageName());
+      return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
 
     }
 
@@ -156,7 +156,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     if (isLollipop) {
 
-     return context.getResources().getIdentifier("icon", "drawable", context.getPackageName());
+     return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
 
     }
 
