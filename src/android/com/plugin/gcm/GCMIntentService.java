@@ -148,26 +148,19 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     }
 
-    return context.getApplicationInfo().icon;
+    return context.getApplicationInfo().notification_icon;
   }
   
   private int getNotificationLargeIcon(Context context) {
     boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
 
     if (isLollipop) {
-      AssetManager am = getResources().getAssets();
-      try {
-          InputStream is = am.open("wwww/notification_icon.png");
-          // use the input stream as you want
-      } catch (IOException e) {
-          e.printStackTrace();
-      }
+      Resources r = getResources();
 
-     return is;
-
+      return r.getIdentifier("notification_icon", "raw", context.getPackageName());
     }
 
-    return context.getApplicationInfo().icon;
+    return context.getApplicationInfo().notification_icon;
   }
 
   @Override
