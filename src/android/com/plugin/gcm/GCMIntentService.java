@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.os.Build;
+import com.myapp.www.R;
 
 import android.graphics.BitmapFactory;
 import com.google.android.gcm.GCMBaseIntentService;
@@ -97,7 +98,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
       .setDefaults(defaults)
-      .setSmallIcon(getNotificationSmallIcon(context))
+      .setSmallIcon(R.drawable.notification_icon)
       .setLargeIcon(BitmapFactory.decodeResource(getResources(), getNotificationLargeIcon(context)))
       .setWhen(System.currentTimeMillis())
       .setContentTitle(extras.getString("title"))
@@ -148,7 +149,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     }
 
-    return context.getApplicationInfo().notification_icon;
+    return context.getApplicationInfo().icon;
   }
   
   private int getNotificationLargeIcon(Context context) {
@@ -160,7 +161,7 @@ public class GCMIntentService extends GCMBaseIntentService {
       return r.getIdentifier("notification_icon", "raw", context.getPackageName());
     }
 
-    return context.getApplicationInfo().notification_icon;
+    return context.getApplicationInfo().icon;
   }
 
   @Override
