@@ -140,27 +140,11 @@ public class GCMIntentService extends GCMBaseIntentService {
   }
 
   private int getNotificationSmallIcon(Context context) {
-    boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
-
-    if (isLollipop) {
-
-      return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
-
-    }
-
-    return context.getApplicationInfo().icon;
+     return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
   }
   
   private int getNotificationLargeIcon(Context context) {
-    boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
-
-    if (isLollipop) {
-
-     return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
-
-    }
-
-    return context.getApplicationInfo().icon;
+    return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
   }
 
   @Override
