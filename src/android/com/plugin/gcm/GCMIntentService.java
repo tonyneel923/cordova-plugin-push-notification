@@ -155,8 +155,15 @@ public class GCMIntentService extends GCMBaseIntentService {
     boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
 
     if (isLollipop) {
+      AssetManager am = getResources().getAssets();
+      try {
+          InputStream is = am.open("wwww/notification_icon.png");
+          // use the input stream as you want
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
 
-     return context.getResources().getIdentifier("notification_icon", "raw", context.getPackageName());
+     return is;
 
     }
 
