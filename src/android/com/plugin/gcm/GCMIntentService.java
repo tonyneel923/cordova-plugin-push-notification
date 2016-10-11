@@ -98,7 +98,7 @@ public class GCMIntentService extends GCMBaseIntentService {
     NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
       .setDefaults(defaults)
       .setSmallIcon(getNotificationSmallIcon(context))
-      .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon))
+      .setLargeIcon(BitmapFactory.decodeResource(getResources(), getNotificationLargeIcon(context)))
       .setWhen(System.currentTimeMillis())
       .setContentTitle(extras.getString("title"))
       .setTicker(extras.getString("title"))
@@ -140,11 +140,27 @@ public class GCMIntentService extends GCMBaseIntentService {
   }
 
   private int getNotificationSmallIcon(Context context) {
-     return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
+     boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+
+    if (isLollipop) {
+
+      return context.getResources().getIdentifier("small_icon", "drawable", context.getPackageName());
+
+    }
+
+    return context.getApplicationInfo().icon;
   }
   
   private int getNotificationLargeIcon(Context context) {
-    return context.getResources().getIdentifier("notification_icon", "drawable", context.getPackageName());
+    boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+
+    if (isLollipop) {
+
+     return context.getResources().getIdentifier("large_icon", "drawable", context.getPackageName());
+
+    }
+
+    return context.getApplicationInfo().icon;
   }
 
   @Override
