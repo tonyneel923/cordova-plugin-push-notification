@@ -104,8 +104,10 @@ public class GCMIntentService extends GCMBaseIntentService {
       .setTicker(extras.getString("title"))
       .setContentIntent(contentIntent)
       .setAutoCancel(true);
+    
+    int RGB = android.graphics.Color.rgb(14, 72, 126);
 
-    mBuilder.setColor(0xffd10000);
+    mBuilder.setColor(RGB);
 
     String message = extras.getString("message");
     if (message != null) {
