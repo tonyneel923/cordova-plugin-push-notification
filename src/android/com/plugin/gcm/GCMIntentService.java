@@ -105,7 +105,18 @@ public class GCMIntentService extends GCMBaseIntentService {
       .setContentIntent(contentIntent)
       .setAutoCancel(true);
     
-    int RGB = android.graphics.Color.rgb(14, 72, 126);
+    String rgbNumbers = extras.getString("color");
+    int R = 14;
+    int G = 72;
+    int B = 126;
+    if (rgbNumbers.length > 0) {
+      String[] rgbArray = rgbNumbers.split(",");
+      R = rbgArray[0].toString();
+      G = rbgArray[1].toString();
+      B = rbgArray[2].toString();
+    } 
+    
+    int RGB = android.graphics.Color.rgb(R, G,B);
 
     mBuilder.setColor(RGB);
 
