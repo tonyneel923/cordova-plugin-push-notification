@@ -105,6 +105,8 @@ public class GCMIntentService extends GCMBaseIntentService {
       .setContentIntent(contentIntent)
       .setAutoCancel(true);
     
+     Log.v(TAG, "rgb: " + extras.getString("color"));
+    
     String rgbNumbers = extras.getString("color");
     int R = 14;
     int G = 72;
@@ -115,8 +117,6 @@ public class GCMIntentService extends GCMBaseIntentService {
       G = Integer.parseInt(rgbArray[1]);
       B = Integer.parseInt(rgbArray[2]);
     }
-    
-    Log.v(TAG, "rgb: " + R + ' ' + G + ' ' + B);
     
     int RGB = android.graphics.Color.rgb(R, G,B);
 
