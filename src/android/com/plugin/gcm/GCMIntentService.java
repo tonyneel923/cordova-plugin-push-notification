@@ -109,7 +109,7 @@ public class GCMIntentService extends GCMBaseIntentService {
     int R = 14;
     int G = 72;
     int B = 126;
-    if (rgbNumbers.length > 0) {
+    if (rgbNumbers.length() > 0) {
       String[] rgbArray = rgbNumbers.split(",");
       R = Integer.parseInt(rgbArray[0]);
       G = Integer.parseInt(rgbArray[1]);
