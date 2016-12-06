@@ -114,7 +114,9 @@ public class GCMIntentService extends GCMBaseIntentService {
       R = Integer.parseInt(rgbArray[0]);
       G = Integer.parseInt(rgbArray[1]);
       B = Integer.parseInt(rgbArray[2]);
-    } 
+    }
+    
+    Log.v(TAG, "rgb: " + R + ' ' + G + ' ' + B);
     
     int RGB = android.graphics.Color.rgb(R, G,B);
 
