@@ -111,9 +111,9 @@ public class GCMIntentService extends GCMBaseIntentService {
     int B = 126;
     if (rgbNumbers.length > 0) {
       String[] rgbArray = rgbNumbers.split(",");
-      R = rbgArray[0].toString();
-      G = rbgArray[1].toString();
-      B = rbgArray[2].toString();
+      R = rgbArray[0].toString();
+      G = rgbArray[1].toString();
+      B = rgbArray[2].toString();
     } 
     
     int RGB = android.graphics.Color.rgb(R, G,B);
