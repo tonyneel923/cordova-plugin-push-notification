@@ -57,7 +57,7 @@
         <source-file src="src/android/com/plugin/gcm/PushHandlerActivity.java" target-dir="src/com/plugin/gcm/" />
         <source-file src="src/android/com/plugin/gcm/PushPlugin.java" target-dir="src/com/plugin/gcm/" />
 
-        <dependency id="cordova-android-support-v4" url="https://github.com/zckrs/cordova-plugin-android-support-v4.git" />
+        
     </platform>
 
     <!-- amazon-fireos -->
